@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+$orange-bassan = #f0c180
+$orange-bassan-accessible-white-bg = #A66914
+
+body, html
+  font-size 1.08rem
+  font-weight 400
+  font-family Nunito, sans-serif
+
+h2, h3
+  padding 2rem
+
+.has-section-margin
+  margin-top 4.5rem
+
+.has-border-bottom
+  border-bottom solid 1px #ccc
+
+.has-border-top
+  border-top solid 1px #ccc
+
+.has-background-bassan
+  background-color #FEFBF0
+
+.is-rounded
+  border-radius 50%
+
+.content
+  > blockquote
+    margin-top 1rem
+
+a
+  transition all 0.4s ease-in-out
+  &:focus
+    outline $orange-bassan-accessible-white-bg auto 5px
+
+  &.navbar-item
+    color #545454
+
+    &:hover 
+      color $orange-bassan-accessible-white-bg
+      
+    &.is-active
+      border-top 4px solid $orange-bassan
+      margin-top -2px
+      font-weight 800
+
+.has-padding-bottom
+  padding-bottom 0.5rem
+
+.has-2x-padding-top
+  padding-top 1.5rem
+
+.has-4x-padding-top
+  padding-top 3rem
+
+.has-padding-top
+  padding-top 0.5rem
+
+.has-margin-top
+  padding-top 0.5rem
+
+.has-content-centered
+  margin auto
+
+.content
+  > p
+    font-size 0.8rem;
+
+.button
+  &:focus
+    border-color transparent
+
+  &.is-bassan
+    border-color $orange-bassan-accessible-white-bg
+    color $orange-bassan-accessible-white-bg
+    border-left transparent
+    border-right transparent
+    border-radius 0
+    margin-left 0.5rem
+    margin-right 0.5rem
+    transition all 0.5s ease-in-out
+
+    &.is-rounded
+      border-radius 4px
+      background-color $orange-bassan
+      border-left 1px solid $orange-bassan-accessible-white-bg
+      border-right 1px solid $orange-bassan-accessible-white-bg
+
+    &.is-selected
+      // background-color #70A6A9 bleu
+      border-color $orange-bassan-accessible-white-bg
+      color #545454
+      // color #353535 gris accessible
+      font-weight 800
+      box-shadow none
+
+    &:focus
+      box-shadow 0 0 0 0.125em rgba(darken($orange-bassan, 60%), 0.75)
+
+    &:hover
+      background-color darken($orange-bassan, 5%)
+      color #505050
