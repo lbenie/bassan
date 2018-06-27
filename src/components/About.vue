@@ -7,11 +7,11 @@
             data-wow-delay="250ms"
           )
             | {{ data.title }}
-      .columns.is-multiline.has-2x-padding-top
+      .columns.has-2x-padding-top.is-full-tablet
         .column.is-half
           div(v-html="$md.render(data.content)")
-        .column
-          figure.image.is-370x370.has-content-centered
+        .column.is-columns-v-centered.is-column-h-centered
+          figure.image.is-480x480
             img.is-rounded(
               :src="data.avatar.fields.file.url"
               alt="Bassan"
@@ -30,7 +30,7 @@
         //       max="100"
         //     )
         //       | {{ key }}
-
+      .columns.is-multiline
         .column.is-half.is-offset-one-quarter.has-text-centered.has-4x-padding-top
           h3.wow.fadeIn.title.is-uppercase.has-border-top.has-border-bottom(
             data-wow-delay="250ms"
@@ -56,9 +56,9 @@ export default {
 }
 
 .image {
-  &.is-370x370 {
-    height: 370px;
-    width: 370px;
+  &.is-480x480 {
+    height: 480px;
+    width: 480px;
   }
 }
 </style>

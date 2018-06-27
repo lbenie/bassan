@@ -1,56 +1,57 @@
 <template lang="pug">
   section.section
     .container
-      .columns.is-multiline
+      .columns
         .column.is-half.is-offset-one-quarter.has-text-centered
           h2#work.wow.fadeIn.title.is-uppercase.has-border-top.has-border-bottom(
             data-wow-delay="250ms"
           )
             | {{ work.title }}
-      .column.is-12.is-offset-one-quarter
-        .buttons
-          button.button(
-            v-for="(category, index) in work.categories"
-            :key="index"
-            @click="filter(category)"
-            class="is-bassan"
-            :class="{ 'is-selected': filterOption === category }"
-          )
-            | {{ category }}
-      .column.is-12.has-content-centered
-        no-ssr
-          isotope(
-            ref="grid"
-            @layout="currentLayout"
-            :item-selector="'element-item'"
-            :list="client"
-            :options="option"
-          )
-            .card(
-              v-for="(element, index) in client"
+      .columns
+        .column
+          .buttons.is-centered
+            button.button(
+              v-for="(category, index) in work.categories"
               :key="index"
-              :class="[element.category]"
+              @click="filter(category)"
+              class="is-bassan"
+              :class="{ 'is-selected': filterOption === category }"
             )
-              // header.card-header.has-border-bottom
-              //   p.card-header-title.has-text-centered
-              //     | {{ element.fields.title }}
-              .card-image(v-if="element.fields.logo")
-                figure.image
-                  img(
-                    :src="element.fields.logo.fields.file.url"
-                    alt="element.fields.logo.fields.title"
-                  )
-              .card-content(
-                :class="{ 'has-border-top': element.fields.logo }"
+              | {{ category }}
+      .columns
+        .column
+          no-ssr
+            isotope(
+              ref="grid"
+              @layout="currentLayout"
+              :item-selector="'element-item'"
+              :list="client"
+              :options="option"
+            )
+              .card(
+                v-for="(element, index) in client"
+                :key="index"
               )
-                .media.has-border-bottom(v-if="!element.fields.logo")
-                  .media-cont.nt
-                    p.subtitle.is-6
-                      | {{ element.fields.title }}
-                .content(v-html="$md.render(element.fields.exerpt || '')")
-                footer.card-footer
-                  nuxt-link.card-footer-item.button.is-bassan.is-selected.is-rounded(:to="`/portofolio/${element.sys.id}`")
-                    | En savoir plus...
+                // header.card-header.has-border-bottom
+                //   p.card-header-title.has-text-centered
+                //     | {{ element.fields.title }}
+                .card-image(v-if="element.fields.logo")
+                  figure.image
+                    img(
+                      :src="element.fields.logo.fields.file.url"
+                      alt="element.fields.logo.fields.title"
+                    )
+                .card-content(
+                  :class="{ 'has-border-top': element.fields.logo }"
+                )
+                  .media.has-border-bottom(v-if="!element.fields.logo")
+                    .media-cont.nt
+                      p.subtitle.is-6
+                        | {{ element.fields.title }}
+                  .content(v-html="$md.render(element.fields.exerpt || '')")
+                  footer.card-footer
+                    nuxt-link.card-footer-item.button.is-bassan.is-selected.is-rounded(:to="`/portofolio/${element.sys.id}`")
+                      | En savoir plus...
 </template>
 <script>
 export default {
@@ -70,21 +71,21 @@ export default {
         this.$refs.grid.iso.arrange();
       }, 150);
     });
+
+    console.log(this.client);
   },
   data() {
     return {
       currentLayout: 'masonry',
       selected: null,
       sortOption: 'original-order',
-      filterOption: 'tous',
+      filterOption: 'Tous',
       option: {
         itemSelector: '.element-item',
         getFilterData: {
-          tous: () => true,
-          'rédaction créative': el =>
-            el.fields.category === 'rédaction créative',
-          'réseaux sociaux': el => el.fields.category === 'réseaux sociaux',
-          réécriture: el => el.fields.category === 'réécriture'
+          Tous: () => true,
+          'Rédaction créative': el => /rédaction/i.test(el.fields.category),
+          'Réseaux sociaux': el => /réseaux/i.test(el.fields.category)
         }
       }
     };
@@ -103,13 +104,14 @@ export default {
 
   &:hover {
     z-index: 1;
-    margin-left: 0.5rem
-    transition: all 0.5s ease-in-out;
+    margin-left: 0.5rem;
+    transition: transform 0.5s ease-in-out;
     transform: scale(1.15) translate(20px, 0px);
   }
 }
+
 .card-footer {
-  border-top: 0
+  border-top: 0;
 }
 
 .grid {
@@ -128,6 +130,12 @@ export default {
 
 .element-item {
   margin: 0.5rem;
-  width: 250px;
+  width: 340px;
+}
+
+@media (min-width: 769px) {
+  .element-item {
+    width: 250px;
+  }
 }
 </style>

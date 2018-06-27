@@ -31,16 +31,16 @@ h2, h3
     margin-top 1rem
 
 a
-  transition all 0.4s ease-in-out
+  transition border 0.4s ease-in-out
   &:focus
     outline $orange-bassan-accessible-white-bg auto 5px
 
   &.navbar-item
     color #545454
 
-    &:hover 
+    &:hover
       color $orange-bassan-accessible-white-bg
-      
+
     &.is-active
       border-top 4px solid $orange-bassan
       margin-top -2px
@@ -61,11 +61,23 @@ a
 .has-margin-top
   padding-top 0.5rem
 
-.has-content-centered
+.is-columns-v-centered
+  display flex
+  align-items center
+
+.is-column-h-centered
+  display flex
+  justify-content center
+
+.is-mx-auto
   margin auto
 
 .content
   > p
+    font-size 0.8rem;
+
+.card-footer
+  > a
     font-size 0.8rem;
 
 .button
@@ -91,6 +103,7 @@ a
     &.is-selected
       // background-color #70A6A9 bleu
       border-color $orange-bassan-accessible-white-bg
+      background-color $orange-bassan
       color #545454
       // color #353535 gris accessible
       font-weight 800
