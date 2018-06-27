@@ -94,12 +94,6 @@ a
     margin-right 0.5rem
     transition all 0.5s ease-in-out
 
-    &.is-rounded
-      border-radius 4px
-      background-color $orange-bassan
-      border-left 1px solid $orange-bassan-accessible-white-bg
-      border-right 1px solid $orange-bassan-accessible-white-bg
-
     &.is-selected
       // background-color #70A6A9 bleu
       border-color $orange-bassan-accessible-white-bg
@@ -108,6 +102,12 @@ a
       // color #353535 gris accessible
       font-weight 800
       box-shadow none
+
+      &.is-rounded
+        border-radius 4px
+        background-color transparent
+        border-left 1px solid $orange-bassan-accessible-white-bg
+        border-right 1px solid $orange-bassan-accessible-white-bg
 
     &:focus
       box-shadow 0 0 0 0.125em rgba(darken($orange-bassan, 60%), 0.75)
