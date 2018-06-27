@@ -71,8 +71,6 @@ export default {
         this.$refs.grid.iso.arrange();
       }, 150);
     });
-
-    console.log(this.client);
   },
   data() {
     return {
