@@ -76,7 +76,6 @@ export default {
     return {
       currentLayout: 'masonry',
       selected: null,
-      sortOption: 'original-order',
       filterOption: 'Tous',
       option: {
         itemSelector: '.element-item',
