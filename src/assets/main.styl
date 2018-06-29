@@ -3,8 +3,8 @@
 $orange-bassan = #f0c180
 $orange-bassan-accessible-white-bg = #A66914
 
-fs(d, max, min = d)
-  "calc(%spx + (%s - %s) * (100vw - 300px) / (1400 - 300))" % (d max min)
+fs(min, max)
+  "calc(%spx + (%s - %s) * (100vw - 300px) / (1400 - 300))" % (min max min)
 
 body, html
   font-size fs(16, 18)
@@ -82,6 +82,9 @@ a
 .has-margin-top
   padding-top 0.5rem
 
+.has-negative-margin-top-8
+  margin-top -8em
+
 .is-columns-v-centered
   display flex
   align-items center
@@ -116,11 +119,9 @@ a
     transition all 0.5s ease-in-out
 
     &.is-selected
-      // background-color #70A6A9 bleu
       border-color $orange-bassan-accessible-white-bg
       background-color $orange-bassan
       color #545454
-      // color #353535 gris accessible
       font-weight 800
       box-shadow none
 

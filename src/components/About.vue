@@ -19,7 +19,9 @@
               alt="Bassan"
             )
       .columns.is-multiline
-        .column.is-half.is-offset-one-quarter.has-text-centered.has-4x-padding-top
+        .column.is-half.is-offset-one-quarter.has-text-centered(
+          :class="[{ 'has-4x-padding-top': !isMobile, 'has-negative-margin-top-8': isMobile }]"
+        )
           h3.wow.fadeIn.is-uppercase.has-border-top.has-border-bottom(
             data-wow-delay="250ms"
           )
@@ -36,6 +38,14 @@ export default {
       type: [Object],
       required: true
     }
+  },
+  data: () => {
+    return {
+      isMobile: null
+    };
+  },
+  mounted() {
+    this.isMobile = window ? window.innerWidth < 768 : true;
   }
 };
 </script>
