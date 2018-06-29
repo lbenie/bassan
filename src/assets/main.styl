@@ -3,13 +3,34 @@
 $orange-bassan = #f0c180
 $orange-bassan-accessible-white-bg = #A66914
 
+fs(d, max, min = d)
+  "calc(%spx + (%s - %s) * (100vw - 300px) / (1400 - 300))" % (d max min)
+
 body, html
-  font-size 1.08rem
+  font-size fs(16, 18)
   font-weight 400
   font-family Nunito, sans-serif
 
 h2, h3
   padding 2rem
+
+.logo-h1
+  letter-spacing 10px
+  font-size fs(40, 120)
+
+.logo-p
+  margin-top -1em
+  margin-bottom -2.5em
+  font-size fs(20, 35)
+
+h1
+  font-size fs(35, 60)
+
+h2
+  font-size fs(30, 40)
+
+h3
+  font-size fs(25, 35)
 
 .has-section-margin
   margin-top 4.5rem

@@ -10,30 +10,38 @@
                   alt="Bassan"
                 )
               .is-uppercase.has-text-weight-bold.has-text-centered.has-negative-margin-top
-                h1.wow.jackInTheBox.has-text-black(
+                h1.wow.jackInTheBox.has-text-black.logo-h1(
                   data-wow-delay="250ms"
                 )
                   | bassan
-                p.wow.lightSpeedIn.is-size-9(
+                p.wow.lightSpeedIn.logo-p(
                   data-wow-delay="500ms"
                 )
                   | rédaction créative
 </template>
 <style lang="stylus" scoped>
 .has-negative-margin-top {
-  margin: -6rem;
+  margin-top: -6em;
   position: relative;
   z-index: 1;
+}
 
-  h1 {
-    letter-spacing: 10px;
-    font-size: 8rem;
+
+@media (max-width: 1024px) {
+  .has-negative-margin-top {
+    margin-top: -4.5em;
   }
+}
 
-  p {
-    margin: -2.5rem;
-    position: relative;
-    font-size: 2rem;
+@media  (max-width: 767px) {
+  .has-negative-margin-top {
+    margin-top: -3.5em;
+  }
+}
+
+@media (max-width: 480px) {
+  .has-negative-margin-top {
+    margin-top: -2em;
   }
 }
 </style>

@@ -3,7 +3,7 @@
     .container
       .columns
         .column.is-half.is-offset-one-quarter.has-text-centered
-          h2#about.wow.fadeIn.title.is-uppercase.has-border-top.has-border-bottom(
+          h2#about.wow.fadeIn.is-uppercase.has-border-top.has-border-bottom(
             data-wow-delay="250ms"
           )
             | {{ data.title }}
@@ -20,7 +20,7 @@
             )
       .columns.is-multiline
         .column.is-half.is-offset-one-quarter.has-text-centered.has-4x-padding-top
-          h3.wow.fadeIn.title.is-uppercase.has-border-top.has-border-bottom(
+          h3.wow.fadeIn.is-uppercase.has-border-top.has-border-bottom(
             data-wow-delay="250ms"
           )
             | {{ data.pathTitle }}
