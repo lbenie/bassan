@@ -2,6 +2,7 @@
 
 $orange-bassan = #f0c180
 $orange-bassan-accessible-white-bg = #A66914
+$pure-white = #ffffff
 
 fs(min, max)
   "calc(%spx + (%s - %s) * (100vw - 300px) / (1400 - 300))" % (min max min)
@@ -52,6 +53,7 @@ h3
     margin-top 1rem
 
 a
+  color #2E71DB
   transition border 0.4s ease-in-out
   &:focus
     outline $orange-bassan-accessible-white-bg auto 5px
@@ -119,7 +121,8 @@ a
     transition all 0.5s ease-in-out
 
     &.is-selected
-      border-color $orange-bassan-accessible-white-bg
+      border-left 1px solid $orange-bassan-accessible-white-bg
+      border-right 1px solid $orange-bassan-accessible-white-bg
       background-color $orange-bassan
       color #545454
       font-weight 800
@@ -128,10 +131,13 @@ a
       &.is-rounded
         border-radius 4px
         background-color transparent
-        border-left 1px solid $orange-bassan-accessible-white-bg
-        border-right 1px solid $orange-bassan-accessible-white-bg
+
+        &:hover
+          background-color $orange-bassan-accessible-white-bg
+          color $pure-white
 
     &:focus
+      border-color transparent
       box-shadow 0 0 0 0.125em rgba(darken($orange-bassan, 60%), 0.75)
 
     &:hover

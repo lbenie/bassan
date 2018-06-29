@@ -12,6 +12,7 @@ module.exports = {
     title: 'Bassan',
     meta: [
       { charset: 'utf-8' },
+      { lang: 'fr' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],

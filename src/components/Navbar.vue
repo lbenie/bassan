@@ -41,6 +41,9 @@
 </template>
 
 <script>
+const isActive = 'is-active';
+const scroll = 'scroll';
+
 export default {
   props: {
     data: {
@@ -50,12 +53,12 @@ export default {
   },
   created() {
     if (process.browser) {
-      window.addEventListener('scroll', e => this.handleScroll(e));
+      window.addEventListener(scroll, e => this.handleScroll(e));
     }
   },
   destroyed() {
     if (process.browser) {
-      window.removeEventListener('scroll', e => this.handleScroll(e));
+      window.removeEventListener(scroll, e => this.handleScroll(e));
     }
   },
   methods: {
@@ -66,17 +69,18 @@ export default {
         return $el && $el.getBoundingClientRect().top < 100;
       });
 
-      if (currentNav.length > 0) {
-        this.data.navbar.links.forEach(link => {
-          const $el = document.querySelector(`#link-${link.href}`);
+      this.data.navbar.links.forEach(link => {
+        const $el = document.querySelector(`#link-${link.href}`);
 
-          if (currentNav[currentNav.length - 1].href === link.href) {
-            $el.classList.add('is-active');
-          } else if ($el) {
-            $el.classList.remove('is-active');
-          }
-        });
-      }
+        if (
+          currentNav.length > 0 &&
+          currentNav[currentNav.length - 1].href === link.href
+        ) {
+          $el.classList.add(isActive);
+        } else if ($el) {
+          $el.classList.remove(isActive);
+        }
+      });
     },
     toggle() {
       const $$links = Array.from(document.querySelectorAll('.navbar-burger'));
@@ -85,8 +89,8 @@ export default {
         const target = el.dataset.target;
         const $target = document.querySelector(`.${target}`);
 
-        el.classList.toggle('is-active');
-        $target.classList.toggle('is-active');
+        el.classList.toggle(isActive);
+        $target.classList.toggle(isActive);
       });
     }
   }
