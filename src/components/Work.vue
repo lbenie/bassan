@@ -23,7 +23,7 @@
           no-ssr
             isotope(
               ref="grid"
-              @layout="currentLayout"
+              v-images-loaded:on.progress="layout"
               :item-selector="'element-item'"
               :list="client"
               :options="option"
@@ -32,9 +32,6 @@
                 v-for="(element, index) in client"
                 :key="index"
               )
-                // header.card-header.has-border-bottom
-                //   p.card-header-title.has-text-centered
-                //     | {{ element.fields.title }}
                 .card-image(v-if="element.fields.logo")
                   figure.image
                     img(
@@ -65,13 +62,6 @@ export default {
       required: true
     }
   },
-  mounted() {
-    this.$nextTick().then(() => {
-      window.setTimeout(() => {
-        this.$refs.grid.iso.arrange();
-      }, 150);
-    });
-  },
   data() {
     return {
       currentLayout: 'masonry',
@@ -91,6 +81,9 @@ export default {
     filter(key) {
       this.$refs.grid.filter(key);
       this.filterOption = key;
+    },
+    layout() {
+      this.$refs.grid.layout('masonry');
     }
   }
 };

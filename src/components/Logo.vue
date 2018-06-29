@@ -5,11 +5,18 @@
           .columns
             .column.is-half.is-offset-one-quarter
               figure.image.is-square
-                img(src="~/static/logo.png", alt="Bassan")
+                img(
+                  src="~/static/logo.png"
+                  alt="Bassan"
+                )
               .is-uppercase.has-text-weight-bold.has-text-centered.has-negative-margin-top
-                h1.wow.jackInTheBox.has-text-black(data-wow-delay="250ms")
+                h1.wow.jackInTheBox.has-text-black(
+                  data-wow-delay="250ms"
+                )
                   | bassan
-                p.wow.lightSpeedIn.is-size-9(data-wow-delay="500ms")
+                p.wow.lightSpeedIn.is-size-9(
+                  data-wow-delay="500ms"
+                )
                   | rédaction créative
 </template>
 <style lang="stylus" scoped>

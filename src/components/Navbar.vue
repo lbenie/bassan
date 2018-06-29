@@ -8,11 +8,25 @@
           to="/"
           v-scroll-to="`#top`"
         )
-          img(src="~/static/logo.png" alt="Bassan" width="50" height="50")
-        .navbar-burger.burger(data-target="navbar-menu" @click="toggle")
-          span(aria-hidden="true")
-          span(aria-hidden="true")
-          span(aria-hidden="true")
+          img(
+            src="~/static/logo.png"
+            alt="Bassan"
+            width="50"
+            height="50"
+          )
+        .navbar-burger.burger(
+          data-target="navbar-menu"
+          @click="toggle"
+        )
+          span(
+            aria-hidden="true"
+          )
+          span(
+            aria-hidden="true"
+          )
+          span(
+            aria-hidden="true"
+          )
       .navbar-menu
         .navbar-end
           .navbar-item
@@ -51,19 +65,18 @@ export default {
 
         return $el && $el.getBoundingClientRect().top < 100;
       });
-      ``;
-      this.data.navbar.links.forEach(link => {
-        const $el = document.querySelector(`#link-${link.href}`);
 
-        if (
-          currentNav.length > 0 &&
-          currentNav[currentNav.length - 1].href === link.href
-        ) {
-          $el.classList.add('is-active');
-        } else if ($el) {
-          $el.classList.remove('is-active');
-        }
-      });
+      if (currentNav.length > 0) {
+        this.data.navbar.links.forEach(link => {
+          const $el = document.querySelector(`#link-${link.href}`);
+
+          if (currentNav[currentNav.length - 1].href === link.href) {
+            $el.classList.add('is-active');
+          } else if ($el) {
+            $el.classList.remove('is-active');
+          }
+        });
+      }
     },
     toggle() {
       const $$links = Array.from(document.querySelectorAll('.navbar-burger'));

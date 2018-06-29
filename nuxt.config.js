@@ -42,14 +42,7 @@ module.exports = {
         });
       }
     },
-    vendor: [
-      '~/plugins/fontawesome',
-      'contentful',
-      'wowjs',
-      'vueisotope',
-      'vue-images-loaded',
-      'vue-scrollto'
-    ]
+    vendor: ['~/plugins/fontawesome', 'contentful', 'wowjs', 'vue-scrollto']
   },
   css: [
     { src: 'bulma/bulma.sass', lang: 'sass' },
