@@ -43,7 +43,7 @@ module.exports = {
         });
       }
     },
-    vendor: ['~/plugins/fontawesome', 'contentful', 'wowjs', 'vue-scrollto']
+    vendor: ['contentful', 'wowjs']
   },
   css: [
     { src: 'bulma/bulma.sass', lang: 'sass' },
@@ -54,10 +54,10 @@ module.exports = {
   plugins: [
     '~/plugins/fontawesome',
     '~/plugins/contentful',
-    { src: '~/plugins/wowjs', ssr: false },
-    { src: '~/plugins/smoothscroll', ssr: false },
+    { src: '~/plugins/scrollto', ssr: false },
     { src: '~/plugins/isotope', ssr: false },
-    { src: '~/plugins/imageloaded', ssr: false }
+    { src: '~/plugins/imageloaded', ssr: false },
+    { src: '~/plugins/smoothscroll', ssr: false }
   ],
   modules: ['@nuxtjs/dotenv', '@nuxtjs/markdownit'],
   markdownit: {

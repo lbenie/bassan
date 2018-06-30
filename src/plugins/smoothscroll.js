@@ -1,7 +1,7 @@
-import Vue from 'vue';
-import vueScrollTo from 'vue-scrollto';
+import smoothscroll from 'smoothscroll-for-websites';
 
-Vue.use(vueScrollTo, {
-  duration: 1500,
-  offset: -65
+smoothscroll({
+  animationTime: 800,
+  stepSize: 20,
+  touchpadSupport: true
 });

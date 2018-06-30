@@ -3,7 +3,7 @@
     navbar(:data="navbar")
     logo
     about(:data="about")
-    work(:work="work" :client="client")
+    work(:work="work" :clients="client")
     service
 </template>
 
@@ -34,7 +34,9 @@ export default {
 
     data.forEach((element, index) => {
       if (data[index].items[0].sys.contentType.sys.id === 'client') {
-        result[data[index].items[0].sys.contentType.sys.id] = data[index].items;
+        result[data[index].items[0].sys.contentType.sys.id] = data[
+          index
+        ].items.slice(0, 7);
       } else {
         result[data[index].items[0].sys.contentType.sys.id] =
           data[index].items[0].fields;
@@ -42,6 +44,13 @@ export default {
     });
 
     return result;
+  },
+  mounted() {
+    if (process.browser) {
+      const wow = require('wowjs');
+
+      new wow.WOW().init();
+    }
   }
 };
 </script>

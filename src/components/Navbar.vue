@@ -33,7 +33,7 @@
             nuxt-link.navbar-item(
               v-for="(link, index) in data.navbar.links"
               :key="index"
-              :to="`#${link.href}`"
+              :to="`/#${link.href}`"
               v-scroll-to="`#${link.href}`"
               :id="`link-${link.href}`"
             )
