@@ -76,8 +76,8 @@ module.exports = {
     '~/plugins/contentful',
     { src: '~/plugins/scrollto', ssr: false },
     { src: '~/plugins/isotope', ssr: false },
-    { src: '~/plugins/imagesloaded', ssr: false },
-    { src: '~/plugins/tinyslider', ssr: false }
+    { src: '~/plugins/imagesLoaded', ssr: false },
+    { src: '~/plugins/tinySlider', ssr: false }
   ],
   modules: ['@nuxtjs/dotenv', '@nuxtjs/markdownit'],
   markdownit: {
