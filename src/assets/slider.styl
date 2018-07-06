@@ -1,0 +1,19 @@
+.tns-outer [data-action]
+  display flex
+  justify-content center
+
+.tns-nav
+  display flex
+  justify-content center
+
+  & > [aria-controls]
+    margin 0 5px
+    padding 0
+    width 9px
+    height 9px
+    border 0
+    border-radius 50%
+    background $orange-bassan
+
+  & > [aria-selected='true']
+    background $orange-bassan-accessible-white-bg

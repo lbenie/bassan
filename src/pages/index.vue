@@ -1,10 +1,21 @@
 <template lang="pug">
   div
-    navbar(:data="navbar")
+    navbar(
+      :data="navbar"
+    )
     logo
-    about(:data="about")
-    work(:work="work" :clients="client")
+    about(
+      :data="about"
+    )
+    work(
+      :work="work"
+      :clients="client"
+    )
     service
+    testimonial(
+      :data="testimonials"
+      :testimonials="testimonial"
+    )
 </template>
 
 <script>
@@ -13,6 +24,7 @@ import Logo from '~/components/Logo.vue';
 import About from '~/components/About.vue';
 import Work from '~/components/Work.vue';
 import Service from '~/components/Service.vue';
+import Testimonial from '~/components/Testimonial.vue';
 import { client } from '~/plugins/contentful.js';
 
 export default {
@@ -21,14 +33,15 @@ export default {
     Logo,
     About,
     Work,
-    Service
+    Service,
+    Testimonial
   },
   async asyncData({ error }) {
     let result = {};
 
     const data = await Promise.all(
-      ['navbar', 'about', 'work', 'client'].map(x =>
-        client.getEntries({ content_type: x })
+      ['navbar', 'about', 'work', 'client', 'testimonial', 'testimonials'].map(
+        x => client.getEntries({ content_type: x })
       )
     ).catch(e => error(e.message));
 
@@ -37,6 +50,12 @@ export default {
         result[data[index].items[0].sys.contentType.sys.id] = data[
           index
         ].items.slice(0, 7);
+      } else if (
+        data[index].items[0].sys.contentType.sys.id === 'testimonial'
+      ) {
+        result[data[index].items[0].sys.contentType.sys.id] = data[
+          index
+        ].items.map(({ fields }) => fields);
       } else {
         result[data[index].items[0].sys.contentType.sys.id] =
           data[index].items[0].fields;
@@ -47,12 +66,11 @@ export default {
   },
   mounted() {
     if (process.browser) {
-      const wow = require('wowjs');
+      const wowjs = require('wowjs');
 
-      new wow.WOW().init();
+      const wow = new wowjs.WOW();
+      wow.init();
     }
   }
 };
 </script>
-<style>
-</style>

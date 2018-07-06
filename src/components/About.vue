@@ -12,7 +12,7 @@
           div(
             v-html="$md.render(data.content)"
           )
-        .column.is-columns-v-centered.is-column-h-centered
+        .column.is-column-v-centered.is-column-h-centered
           figure.image.is-480x480
             img.is-rounded(
               :src="data.avatar.fields.file.url"
@@ -51,14 +51,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.has-border-top, .has-border-bottom {
-  border-color: #666;
-}
-
-.image {
-  &.is-480x480 {
-    height: 480px;
-    width: 480px;
-  }
-}
+.has-border-top, .has-border-bottom
+  border-color #666
 </style>

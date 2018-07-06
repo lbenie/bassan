@@ -1,15 +1,16 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-
-$orange-bassan = #f0c180
-$orange-bassan-accessible-white-bg = #A66914
-$pure-white = #ffffff
+@import url('https://fonts.googleapis.com/css?family=Nunito')
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script')
+@import 'colors'
+@import 'buttons'
+@import 'slider'
+@import 'image'
 
 fs(min, max)
-  "calc(%spx + (%s - %s) * (100vw - 300px) / (1400 - 300))" % (min max min)
+  'calc(%spx + (%s - %s) * (100vw - 300px) / (1400 - 300))' % (min max min)
 
 body, html
-  font-size fs(16, 18)
   font-weight 400
+  font-size fs(16, 18)
   font-family Nunito, sans-serif
 
 h2, h3
@@ -54,7 +55,8 @@ h3
 
 a
   color #2E71DB
-  transition border 0.4s ease-in-out
+  transition border .4s ease-in-out
+
   &:focus
     outline $orange-bassan-accessible-white-bg auto 5px
 
@@ -65,12 +67,12 @@ a
       color $orange-bassan-accessible-white-bg
 
     &.is-active
-      border-top 4px solid $orange-bassan
       margin-top -2px
+      border-top 4px solid $orange-bassan
       font-weight 800
 
 .has-padding-bottom
-  padding-bottom 0.5rem
+  padding-bottom .5rem
 
 .has-2x-padding-top
   padding-top 1.5rem
@@ -82,10 +84,10 @@ a
   padding-top 6rem
 
 .has-padding-top
-  padding-top 0.5rem
+  padding-top .5rem
 
 .has-margin-top
-  padding-top 0.5rem
+  padding-top .5rem
 
 .has-negative-margin-top-8
   margin-top -8em
@@ -93,7 +95,7 @@ a
 .has-negative-margin-top-3
   margin-top -3em
 
-.is-columns-v-centered
+.is-column-v-centered
   display flex
   align-items center
 
@@ -101,51 +103,21 @@ a
   display flex
   justify-content center
 
+.is-column-pulled-right
+  display flex
+  justify-content flex-end
+
+.is-column-pulled-left
+  display flex
+  justify-content flex-start
+
 .is-mx-auto
   margin auto
 
 .content
   > p
-    font-size 0.8rem;
+    font-size .8rem
 
 .card-footer
   > a
-    font-size 0.8rem;
-
-.button
-  &:focus
-    border-color transparent
-
-  &.is-bassan
-    border-color $orange-bassan-accessible-white-bg
-    color $orange-bassan-accessible-white-bg
-    border-left transparent
-    border-right transparent
-    border-radius 0
-    margin-left 0.5rem
-    margin-right 0.5rem
-    transition all 0.5s ease-in-out
-
-    &.is-selected
-      border-left 1px solid $orange-bassan-accessible-white-bg
-      border-right 1px solid $orange-bassan-accessible-white-bg
-      background-color $orange-bassan
-      color #545454
-      font-weight 800
-      box-shadow none
-
-      &.is-rounded
-        border-radius 4px
-        background-color transparent
-
-        &:hover
-          background-color $orange-bassan-accessible-white-bg
-          color $pure-white
-
-    &:focus
-      border-color transparent
-      box-shadow 0 0 0 0.125em rgba(darken($orange-bassan, 60%), 0.75)
-
-    &:hover
-      background-color darken($orange-bassan, 5%)
-      color #505050
+    font-size .8rem

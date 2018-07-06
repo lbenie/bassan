@@ -1,0 +1,46 @@
+.button
+  &:focus
+    border-color transparent
+
+  &.is-bassan
+    margin-right .5rem
+    margin-left .5rem
+    border-color $orange-bassan-accessible-white-bg
+    border-right transparent
+    border-left transparent
+    border-radius 0
+    color $orange-bassan-accessible-white-bg
+    transition all .5s ease-in-out
+
+    &.is-arrow
+      padding-right 0
+      padding-left 0
+      border-color transparent
+      background-color transparent
+
+      &:hover
+        background-color transparent
+
+    &.is-selected
+      border-right 1px solid $orange-bassan-accessible-white-bg
+      border-left 1px solid $orange-bassan-accessible-white-bg
+      background-color $orange-bassan
+      box-shadow none
+      color #545454
+      font-weight 800
+
+      &.is-rounded
+        border-radius 4px
+        background-color transparent
+
+        &:hover
+          background-color $orange-bassan-accessible-white-bg
+          color $pure-white
+
+    &:focus
+      border-color transparent
+      box-shadow 0 0 0 .125em rgba(darken($orange-bassan, 60%), .75)
+
+    &:hover
+      background-color darken($orange-bassan, 5%)
+      color #505050

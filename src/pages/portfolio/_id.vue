@@ -12,6 +12,9 @@ import { client } from '~/plugins/contentful.js';
 import Navbar from '~/components/Navbar.vue';
 
 export default {
+  components: {
+    Navbar
+  },
   async asyncData({ error, params }) {
     const clientData = await client
       .getEntry(params.id)
@@ -22,8 +25,10 @@ export default {
 
     return { client: clientData.fields, navbar: navbarData.items[0].fields };
   },
-  components: {
-    Navbar
+  head() {
+    return {
+      title: this.client.title
+    };
   }
 };
 </script>

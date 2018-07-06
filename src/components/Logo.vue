@@ -20,32 +20,24 @@
                 | rédaction créative
 </template>
 <style lang="stylus" scoped>
-.has-negative-margin-top {
-  margin-top: -6em;
-  position: relative;
-  z-index: 1;
-}
+.has-negative-margin-top
+  position relative
+  z-index 1
+  margin-top -6em
 
-@media (max-width: 1024px) {
-  .has-negative-margin-top {
-    margin-top: -4.5em;
-  }
-}
+@media (max-width: 1024px)
+  .has-negative-margin-top
+    margin-top -4.5em
 
-@media (max-width: 767px) {
-  .has-negative-margin-top {
-    margin-top: -3.5em;
-  }
+@media (max-width: 767px)
+  .has-negative-margin-top
+    margin-top -3.5em
 
-  .logo-p {
-    margin-top: -.5em;
+  .logo-p
+    margin-top -.5em
     margin-bottom -4.5em
-  }
-}
 
-@media (max-width: 480px) {
-  .has-negative-margin-top {
-    margin-top: -2em;
-  }
-}
+@media (max-width: 480px)
+  .has-negative-margin-top
+    margin-top -2em
 </style>

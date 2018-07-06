@@ -47,17 +47,18 @@ module.exports = {
   },
   css: [
     { src: 'bulma/bulma.sass', lang: 'sass' },
+    { src: 'tiny-slider/src/tiny-slider.scss', lang: 'sass' },
     { src: '~/assets/main.styl', lang: 'stylus' },
     '@fortawesome/fontawesome/styles.css',
     'animate.css/animate.css'
   ],
   plugins: [
-    '~/plugins/fontawesome',
+    '~/plugins/fontAwesome',
     '~/plugins/contentful',
-    { src: '~/plugins/scrollto', ssr: false },
+    { src: '~/plugins/scrollTo', ssr: false },
     { src: '~/plugins/isotope', ssr: false },
-    { src: '~/plugins/imageloaded', ssr: false },
-    { src: '~/plugins/smoothscroll', ssr: false }
+    { src: '~/plugins/imagesLoaded', ssr: false },
+    { src: '~/plugins/tinySlider', ssr: false }
   ],
   modules: ['@nuxtjs/dotenv', '@nuxtjs/markdownit'],
   markdownit: {
