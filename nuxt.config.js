@@ -17,7 +17,22 @@ module.exports = {
       {
         hid: 'description',
         name: 'description',
-        content: 'Bassan rédaction créative'
+        content:
+          'Bassan rédaction créative est une entreprise à Sherbrooke pour les différents type de rédaction. Inclus les réseaux sociaux, matériel corporatif, le web et plus encore.'
+      },
+      {
+        hid: 'keywords',
+        name: 'keywords',
+        content:
+          'Bassan, Bassan rédaction, Bassan rédaction créative, social media, Canada, CA, web, rédaction, website, site web, slogan, communiqué de presse, press release, analyse, analysis, planification stratégique, planification, production de contenu, création de contenu, content creation, content, content production'
+      },
+      {
+        property: 'og:url',
+        content: 'https://bassan.netlify.com'
+      },
+      {
+        name: 'apple-mobile-web-app-capable',
+        content: 'yes'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
