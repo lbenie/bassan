@@ -14,7 +14,11 @@ module.exports = {
       { charset: 'utf-8' },
       { lang: 'fr' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Bassan rédaction créative'
+      }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
