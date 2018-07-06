@@ -72,12 +72,12 @@ module.exports = {
     'animate.css/animate.css'
   ],
   plugins: [
-    '~/plugins/fontAwesome',
+    '~/plugins/fontawesome',
     '~/plugins/contentful',
-    { src: '~/plugins/scrollTo', ssr: false },
+    { src: '~/plugins/scrollto', ssr: false },
     { src: '~/plugins/isotope', ssr: false },
-    { src: '~/plugins/imagesLoaded', ssr: false },
-    { src: '~/plugins/tinySlider', ssr: false }
+    { src: '~/plugins/imagesloaded', ssr: false },
+    { src: '~/plugins/tinyslider', ssr: false }
   ],
   modules: ['@nuxtjs/dotenv', '@nuxtjs/markdownit'],
   markdownit: {
