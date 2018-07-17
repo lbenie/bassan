@@ -11,7 +11,10 @@
       :work="work"
       :clients="client"
     )
-    service
+    service(
+      :data="service",
+      :services="services"
+    )
     testimonial(
       :data="testimonials"
       :testimonials="testimonial"
@@ -40,9 +43,16 @@ export default {
     let result = {};
 
     const data = await Promise.all(
-      ['navbar', 'about', 'work', 'client', 'testimonial', 'testimonials'].map(
-        x => client.getEntries({ content_type: x })
-      )
+      [
+        'navbar',
+        'about',
+        'work',
+        'client',
+        'testimonial',
+        'testimonials',
+        'service',
+        'services'
+      ].map(x => client.getEntries({ content_type: x }))
     ).catch(e => error(e.message));
 
     data.forEach((element, index) => {
@@ -51,7 +61,8 @@ export default {
           index
         ].items.slice(0, 7);
       } else if (
-        data[index].items[0].sys.contentType.sys.id === 'testimonial'
+        data[index].items[0].sys.contentType.sys.id === 'testimonial' ||
+        data[index].items[0].sys.contentType.sys.id === 'services'
       ) {
         result[data[index].items[0].sys.contentType.sys.id] = data[
           index

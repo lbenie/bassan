@@ -3,7 +3,7 @@
     .container
       .columns.is-multiline
         .column.is-half.is-offset-one-quarter.has-text-centered
-          h2#clients.wow.fadeIn.is-uppercase.has-border-top.has-border-bottom(
+          h2#clients.wow.fadeIn.title.is-uppercase.has-border-top.has-border-bottom(
             data-wow-delay="250ms"
           )
             | {{ data.title }}
@@ -42,7 +42,7 @@
                     ) {{ testimonial.jobTitle }}
                     .description(
                       v-html="$md.render(testimonial.content)"
-                      :class="{ 'has-image': testimonial.avatar }"
+                      :class="{ 'has-image': testimonial.avatar,  'has-left-margin': isMobile }"
                     )
 </template>
 <script>
@@ -54,11 +54,22 @@ export default {
     data: {
       type: [Object]
     }
+  },
+  data: () => {
+    return {
+      isMobile: null
+    };
+  },
+  mounted() {
+    this.isMobile = window ? window.innerWidth < 768 : true;
   }
 };
 </script>
 <style lang="stylus" scoped>
 @import '../assets/colors'
+
+.has-left-margin
+  margin-left 1.25em
 
 .testimonial
   padding 35px
