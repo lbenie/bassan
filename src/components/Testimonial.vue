@@ -55,11 +55,9 @@ export default {
       type: [Object]
     }
   },
-  data: () => {
-    return {
-      isMobile: null
-    };
-  },
+  data: () => ({
+    isMobile: null
+  }),
   mounted() {
     this.isMobile = window ? window.innerWidth < 768 : true;
   }

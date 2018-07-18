@@ -19,6 +19,9 @@
       :data="testimonials"
       :testimonials="testimonial"
     )
+    contact(
+      :data="contact"
+    )
 </template>
 
 <script>
@@ -28,6 +31,7 @@ import About from '~/components/About.vue';
 import Work from '~/components/Work.vue';
 import Service from '~/components/Service.vue';
 import Testimonial from '~/components/Testimonial.vue';
+import Contact from '~/components/Contact.vue';
 import { client } from '~/plugins/contentful.js';
 
 export default {
@@ -37,7 +41,8 @@ export default {
     About,
     Work,
     Service,
-    Testimonial
+    Testimonial,
+    Contact
   },
   async asyncData({ error }) {
     let result = {};
@@ -51,7 +56,8 @@ export default {
         'testimonial',
         'testimonials',
         'service',
-        'services'
+        'services',
+        'contact'
       ].map(x => client.getEntries({ content_type: x }))
     ).catch(e => error(e.message));
 

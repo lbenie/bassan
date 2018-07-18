@@ -10,15 +10,16 @@
         .column.is-12
           | {{ data.content }}
       .columns.is-multiline
-        div(
+        .wow(
           v-for="(service, index) in services"
           :key="index"
+          data-wow-delay="250ms"
+          data-wow-duration="2s"
+          data-wow-offset="100"
+          :class="{'slideInLeft': index % 2 === 0, 'slideInRight': index % 2 !== 0}"
         )
           .column.is-half.is-offset-one-quarter.has-text-centered
-            h3.wow.has-border-bottom(
-              data-wow-delay="250ms"
-              :class="{'fadeIn': index % 2 === 0, 'lightSpeedIn': index % 2 !== 0}"
-            )
+            h3.has-border-bottom
               | {{ service.title }}
           no-ssr
             .columns.is-multiline

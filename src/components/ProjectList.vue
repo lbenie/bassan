@@ -62,21 +62,19 @@ export default {
       required: true
     }
   },
-  data() {
-    return {
-      currentLayout: 'masonry',
-      selected: null,
-      filterOption: 'Tous',
-      option: {
-        itemSelector: '.element-item',
-        getFilterData: {
-          Tous: () => true,
-          'Rédaction créative': el => /rédaction/i.test(el.fields.category),
-          'Réseaux sociaux': el => /réseaux/i.test(el.fields.category)
-        }
+  data: () => ({
+    currentLayout: 'masonry',
+    selected: null,
+    filterOption: 'Tous',
+    option: {
+      itemSelector: '.element-item',
+      getFilterData: {
+        Tous: () => true,
+        'Rédaction créative': el => /rédaction/i.test(el.fields.category),
+        'Réseaux sociaux': el => /réseaux/i.test(el.fields.category)
       }
-    };
-  },
+    }
+  }),
   methods: {
     filter(key) {
       this.$refs.grid.filter(key);
