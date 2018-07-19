@@ -24,6 +24,7 @@
     "bulma": "^0.7.1",
     "bulma-pricingtable": "^0.2.0",
     "contentful": "^6.1.1",
+    "moment": "^2.22.2",
     "nuxt": "^1.4.0",
     "qselector": "^2.2.0",
     "register-service-worker": "^1.0.0",

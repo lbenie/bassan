@@ -22,6 +22,7 @@
     contact(
       :data="contact"
     )
+    copyright
 </template>
 
 <script>
@@ -32,6 +33,7 @@ import Work from '~/components/Work.vue';
 import Service from '~/components/Service.vue';
 import Testimonial from '~/components/Testimonial.vue';
 import Contact from '~/components/Contact.vue';
+import Copyright from '~/components/Copyright.vue';
 import { client } from '~/plugins/contentful.js';
 
 export default {
@@ -42,7 +44,8 @@ export default {
     Work,
     Service,
     Testimonial,
-    Contact
+    Contact,
+    Copyright
   },
   async asyncData({ error }) {
     let result = {};

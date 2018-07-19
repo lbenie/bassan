@@ -30,18 +30,18 @@
                   no-ssr
                     font-awesome-icon(
                       :icon="service.icon.split(' ')"
-                      size="5x"
+                      size="4x"
                     )
-                .column.is-6(v-html="$md.render(service.description)")
+                .column.is-6.is-offset-1(v-html="$md.render(service.description)")
               template(
                 v-else
               )
                 .column.is-6.is-offset-1(v-html="$md.render(service.description)")
-                .column.is-3.is-column-v-centered.is-column-h-centered
+                .column.is-3.is-offset-1.is-column-v-centered.is-column-h-centered
                   no-ssr
                     font-awesome-icon(
                       :icon="service.icon.split(' ')"
-                      size="5x"
+                      size="4x"
                     )
 </template>
 <script>
