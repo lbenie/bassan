@@ -6,34 +6,38 @@
           a.facebook(
             href="https://www.facebook.com/bassanredactioncreative/"
           )
-            font-awesome-icon(
-              :icon="['fab', 'facebook']"
-              size="2x"
-            )
+            no-ssr
+              font-awesome-icon(
+                :icon="['fab', 'facebook']"
+                size="2x"
+              )
         .column.is-1
           a.google(
             href="https://plus.google.com/u/0/101459700306530713010"
           )
-            font-awesome-icon(
-              :icon="['fab', 'google-plus-g']"
-              size="2x"
-            )
+            no-ssr
+              font-awesome-icon(
+                :icon="['fab', 'google-plus-g']"
+                size="2x"
+              )
         .column.is-1
           a.linkedin(
             href="https://www.linkedin.com/in/andr%C3%A9e-anne-blais-auclair-b-a-92368b47/"
           )
-            font-awesome-icon(
-              :icon="['fab', 'linkedin']"
-              size="2x"
-            )
+            no-ssr
+              font-awesome-icon(
+                :icon="['fab', 'linkedin']"
+                size="2x"
+              )
         .column.is-1
           a.instagram(
             href="https://www.instagram.com/andreeblaisa/"
           )
-            font-awesome-icon(
-              :icon="['fab', 'instagram']"
-              size="2x"
-            )
+            no-ssr
+              font-awesome-icon(
+                :icon="['fab', 'instagram']"
+                size="2x"
+              )
       .columns.is-centered.is-multiline
         .column.has-text-centered.is-uppercase
           | &copy; Bassan rédaction créative

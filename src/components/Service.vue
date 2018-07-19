@@ -21,28 +21,27 @@
           .column.is-half.is-offset-one-quarter.has-text-centered
             h3.has-border-bottom
               | {{ service.title }}
-          no-ssr
-            .columns.is-multiline
-              template(
-                v-if="index % 2 === 0"
-              )
-                .column.is-3.is-offset-1.is-column-v-centered.is-column-h-centered
-                  no-ssr
-                    font-awesome-icon(
-                      :icon="service.icon.split(' ')"
-                      size="4x"
-                    )
-                .column.is-6.is-offset-1(v-html="$md.render(service.description)")
-              template(
-                v-else
-              )
-                .column.is-6.is-offset-1(v-html="$md.render(service.description)")
-                .column.is-3.is-offset-1.is-column-v-centered.is-column-h-centered
-                  no-ssr
-                    font-awesome-icon(
-                      :icon="service.icon.split(' ')"
-                      size="4x"
-                    )
+          .columns.is-multiline
+            template(
+              v-if="index % 2 === 0"
+            )
+              .column.is-3.is-offset-1.is-column-v-centered.is-column-h-centered
+                no-ssr
+                  font-awesome-icon(
+                    :icon="service.icon.split(' ')"
+                    size="4x"
+                  )
+              .column.is-6.is-offset-1(v-html="$md.render(service.description)")
+            template(
+              v-else
+            )
+              .column.is-6.is-offset-1(v-html="$md.render(service.description)")
+              .column.is-3.is-offset-1.is-column-v-centered.is-column-h-centered
+                no-ssr
+                  font-awesome-icon(
+                    :icon="service.icon.split(' ')"
+                    size="4x"
+                  )
 </template>
 <script>
 export default {
