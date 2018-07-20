@@ -9,7 +9,9 @@
             | {{ data.title }}
       .columns(v-if="isSuccess")
         .column.is-7.is-offset-3
-          #success.notification.is-primary
+          #success.notification.is-primary(
+            :class="{'is-shrinked': !isMobile}"
+          )
             button.delete(
               @click="toggle($event)"
             )
