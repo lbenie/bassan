@@ -59,7 +59,7 @@ export default {
     isMobile: null
   }),
   mounted() {
-    this.isMobile = window ? window.innerWidth < 768 : true;
+    this.isMobile = window && window.innerWidth < 768;
   }
 };
 </script>

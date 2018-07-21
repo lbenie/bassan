@@ -1,4 +1,4 @@
 import Vue from 'vue';
-import imagesLoaded from 'vue-images-loaded';
+import VueImagesLoaded from 'vue-images-loaded';
 
-Vue.directive('images-loaded', imagesLoaded);
+Vue.directive('images-loaded', VueImagesLoaded);

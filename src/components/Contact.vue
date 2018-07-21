@@ -124,7 +124,7 @@ export default {
   mounted() {
     const hash = this.$route.hash;
     this.isSuccess = hash.includes('success');
-    this.isMobile = this.isMobile = window ? window.innerWidth < 768 : true;
+    this.isMobile = this.isMobile = window && window.innerWidth < 768;
 
     if (hash && hash.includes('contact')) {
       const link = document.querySelector(

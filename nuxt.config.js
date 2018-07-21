@@ -72,9 +72,10 @@ module.exports = {
     'animate.css/animate.css'
   ],
   plugins: [
-    '~/plugins/fontawesome',
+    '~/plugins/fontAwesome',
     '~/plugins/contentful',
-    { src: '~/plugins/scrollto', ssr: false },
+    '~/plugins/socialSharing',
+    { src: '~/plugins/scrollTo', ssr: false },
     { src: '~/plugins/isotope', ssr: false },
     { src: '~/plugins/imagesLoaded', ssr: false },
     { src: '~/plugins/tinySlider', ssr: false },

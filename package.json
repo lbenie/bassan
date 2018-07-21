@@ -37,6 +37,7 @@
     "vue-property-decorator": "^7.0.0",
     "vue-router": "^3.0.1",
     "vue-scrollto": "^2.11.0",
+    "vue-social-sharing": "^2.3.3",
     "vue-tiny-slider": "^0.1.25",
     "vueisotope": "^3.1.2",
     "vuex": "^3.0.1",
