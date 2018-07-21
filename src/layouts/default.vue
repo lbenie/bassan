@@ -1,14 +1,25 @@
 <template lang="pug">
   div
-    back-to-top
+    no-ssr
+      back-to-top(
+        bottom="10px"
+        right="2px"
+        visibleoffset=700
+        text="Haut"
+        v-scroll-to="`#top`"
+      )
+        button.button.is-bassan.is-selected.is-rounded(
+          type='button'
+        )
+          font-awesome-icon(
+            icon="angle-up"
+            size="2x"
+            transform="up-2"
+          )
     nuxt
 </template>
 <script>
-import BackToTop from '~/components/BackToTop.vue';
 export default {
-  components: {
-    BackToTop
-  },
   mounted() {
     if (process.browser) {
       const smoothscroll = require('smoothscroll-for-websites');
@@ -22,3 +33,8 @@ export default {
   }
 };
 </script>
+<style lang="stylus" scoped>
+.is-rounded
+  width 50px
+  border-radius 50% !important
+</style>

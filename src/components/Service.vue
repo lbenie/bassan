@@ -7,7 +7,7 @@
             data-wow-delay="250ms"
           )
             | {{ data.title }}
-        .column.is-12
+        .column.is-full
           | {{ data.content }}
       .columns.is-multiline
         .wow(

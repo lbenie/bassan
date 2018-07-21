@@ -43,7 +43,7 @@
           | &copy; Bassan rédaction créative
           br
           | 2017 - {{ getCurrentYear }}
-        .column.has-text-centered.is-12
+        .column.has-text-centered.is-full
           | Conçu et réalisé par&nbsp;
           a(
             href="https://lbenie.netlify.com/"

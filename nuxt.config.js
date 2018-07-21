@@ -77,7 +77,8 @@ module.exports = {
     { src: '~/plugins/scrollto', ssr: false },
     { src: '~/plugins/isotope', ssr: false },
     { src: '~/plugins/imagesLoaded', ssr: false },
-    { src: '~/plugins/tinySlider', ssr: false }
+    { src: '~/plugins/tinySlider', ssr: false },
+    { src: '~/plugins/backToTop', ssr: false }
   ],
   modules: ['@nuxtjs/dotenv', '@nuxtjs/markdownit'],
   markdownit: {

@@ -26,7 +26,7 @@
             data-wow-delay="250ms"
           )
             | {{ data.pathTitle }}
-        .column.is-12.has-2x-padding-top
+        .column.is-full.has-2x-padding-top
           div(
             v-html="$md.render(data.path)"
           )

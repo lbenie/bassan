@@ -7,10 +7,10 @@
             data-wow-delay="250ms"
           )
             | {{ data.title }}
-        .column.is-12
+        .column.is-full
           | {{ data.content }}
         no-ssr
-          .column.is-12
+          .column.is-full
             tiny-slider#testimonials(
               ref="slider"
               items="1"
