@@ -114,7 +114,7 @@ module.exports = {
   },
   manifest: {
     name: 'Bassan | Rédaction',
-    short_name: 'Bassan | Rédaction',
+    short_name: 'Bassan',
     icons: [
       {
         src: '/icons/android-chrome-192x192.png',
@@ -130,6 +130,6 @@ module.exports = {
     start_url: '/index.html',
     display: 'standalone',
     background_color: '#000000',
-    theme_color: '#4DBA87'
+    theme_color: '#f0c180'
   }
 };
