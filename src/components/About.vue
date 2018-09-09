@@ -6,16 +6,16 @@
           h2#about.wow.fadeIn.is-uppercase.has-border-top.has-border-bottom(
             data-wow-delay="250ms"
           )
-            | {{ data.title }}
+            | {{ data[0].title }}
       .columns.has-2x-padding-top.is-full-tablet
         .column.is-half
           div(
-            v-html="$md.render(data.content)"
+            v-html="$md.render(data[0].content)"
           )
         .column.is-column-v-centered.is-column-h-centered
           figure.image.is-480x480
             img.is-rounded(
-              :src="data.avatar.fields.file.url"
+              :src="data[0].avatar.fields.file.url"
               alt="Bassan"
             )
       .columns.is-multiline
@@ -25,17 +25,17 @@
           h3.wow.fadeIn.is-uppercase.has-border-bottom(
             data-wow-delay="250ms"
           )
-            | {{ data.pathTitle }}
+            | {{ data[0].pathTitle }}
         .column.is-full.has-2x-padding-top
           div(
-            v-html="$md.render(data.path)"
+            v-html="$md.render(data[0].path)"
           )
 </template>
 <script>
 export default {
   props: {
     data: {
-      type: [Object],
+      type: [Array],
       required: true
     }
   },

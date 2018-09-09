@@ -6,7 +6,7 @@
           h2#contact.wow.fadeIn.is-uppercase.has-border-top.has-border-bottom(
             data-wow-delay="250ms"
           )
-            | {{ data.title }}
+            | {{ data[0].title }}
       .columns(v-if="isSuccess")
         .column.is-7.is-offset-3
           #success.notification.is-primary(
@@ -16,7 +16,7 @@
               @click="toggle($event)"
             )
             div(
-              v-html="$md.render(data.quoteSentSuccess)"
+              v-html="$md.render(data[0].quoteSentSuccess)"
             )
       .columns(v-if="errors.length")
         .column.is-7.is-offset-3
@@ -117,7 +117,7 @@
 export default {
   props: {
     data: {
-      type: Object,
+      type: Array,
       required: true
     }
   },

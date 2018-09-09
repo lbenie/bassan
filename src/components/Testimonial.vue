@@ -6,9 +6,9 @@
           h2#clients.wow.fadeIn.title.is-uppercase.has-border-top.has-border-bottom(
             data-wow-delay="250ms"
           )
-            | {{ data.title }}
+            | {{ data[0].title }}
         .column.is-full
-          | {{ data.content }}
+          | {{ data[0].content }}
         no-ssr
           .column.is-full
             tiny-slider#testimonials(
@@ -20,8 +20,8 @@
               autoplay
               loop
               autoplay-hover-pause
-              speed=1000
-              :autoplayTimeout=10000
+              speed=1500
+              :autoplayTimeout=15000
             )
               .testimonial(
                 v-for="testimonial in testimonials"
@@ -52,7 +52,7 @@ export default {
       type: [Array]
     },
     data: {
-      type: [Object]
+      type: [Array]
     }
   },
   data: () => ({

@@ -6,12 +6,12 @@
           h2#work.wow.fadeIn.title.is-uppercase.has-border-top.has-border-bottom(
             data-wow-delay="250ms"
           )
-            | {{ work.title }}
+            | {{ work[0].title }}
       .columns
         .column
           .buttons.is-centered
             button.button(
-              v-for="(category, index) in work.categories"
+              v-for="(category, index) in work[0].categories"
               :key="index"
               @click="filter(category)"
               class="is-bassan"
@@ -29,32 +29,38 @@
               :options="option"
             )
               .card(
-                v-for="(element, index) in clients"
+                v-for="(client, index) in clients"
                 :key="index"
               )
-                .card-image(v-if="element.fields.logo")
+                .card-image(v-if="client.logo")
                   figure.image
                     img(
-                      :src="element.fields.logo.fields.file.url"
-                      alt="element.fields.logo.fields.title"
+                      :src="client.logo.fields.file.url"
+                      alt="client.logo.fields.title"
                     )
                 .card-content(
-                  :class="{ 'has-border-top': element.fields.logo }"
+                  :class="{ 'has-border-top': client.logo }"
                 )
-                  .media.has-border-bottom(v-if="!element.fields.logo")
+                  .media.has-border-bottom(
+                    v-if="!client.logo"
+                  )
                     .media-cont.nt
                       p.subtitle.is-6
-                        | {{ element.fields.title }}
-                  .content(v-html="$md.render(element.fields.exerpt || '')")
+                        | {{ client.title }}
+                  .content(
+                    v-html="$md.render(client.exerpt || '')"
+                  )
                   footer.card-footer
-                    nuxt-link.card-footer-item.button.is-bassan.is-selected.is-rounded(:to="`/portfolio/${element.sys.id}`")
+                    nuxt-link.card-footer-item.button.is-bassan.is-selected.is-rounded(
+                      :to="`/portfolio/${client.id}`"
+                    )
                       | En savoir plus...
 </template>
 <script>
 export default {
   props: {
     work: {
-      type: [Object],
+      type: [Array],
       required: true
     },
     clients: {
@@ -70,8 +76,8 @@ export default {
       itemSelector: '.element-item',
       getFilterData: {
         Tous: () => true,
-        'Rédaction créative': el => /rédaction/i.test(el.fields.category),
-        'Réseaux sociaux': el => /réseaux/i.test(el.fields.category)
+        'Rédaction créative': el => /rédaction/i.test(el.category),
+        'Réseaux sociaux': el => /réseaux/i.test(el.category)
       }
     }
   }),
@@ -94,7 +100,7 @@ export default {
     z-index 1
     margin-left .5rem
     transition transform .5s ease-in-out
-    transform scale(1.15) translate(20px, 0px)
+    transform translate(10px, 20px)
 
 .card-footer
   border-top 0

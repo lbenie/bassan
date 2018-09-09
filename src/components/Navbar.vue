@@ -29,7 +29,7 @@
           )
       .navbar-menu
         .navbar-end
-          .navbar-item
+          .navbar-item(v-if="data.navbar && data.navbar.links")
             nuxt-link.navbar-item(
               v-for="(link, index) in data.navbar.links"
               :key="index"
@@ -47,7 +47,7 @@ const scroll = 'scroll';
 export default {
   props: {
     data: {
-      type: [Object],
+      // type: [Object],
       required: true
     }
   },

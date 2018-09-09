@@ -6,9 +6,9 @@
           h2#services.wow.fadeIn.title.is-uppercase.has-border-top.has-border-bottom(
             data-wow-delay="250ms"
           )
-            | {{ data.title }}
+            | {{ data[0].title }}
         .column.is-full
-          | {{ data.content }}
+          | {{ data[0].content }}
       .columns.is-multiline
         .wow(
           v-for="(service, index) in services"
@@ -47,7 +47,7 @@
 export default {
   props: {
     data: {
-      type: Object,
+      type: Array,
       required: true
     },
     services: {

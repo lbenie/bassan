@@ -16,11 +16,31 @@
             size="2x"
             transform="up-2"
           )
+    navbar(
+      :data="navbar"
+    )
     nuxt
 </template>
 <script>
+import Navbar from '~/components/Navbar.vue';
+import { client } from '~/plugins/contentful.js';
+
 export default {
-  mounted() {
+  components: {
+    Navbar
+  },
+  data: () => {
+    return {
+      navbar: {}
+    };
+  },
+  async mounted() {
+    this.navbar = await client
+      .getEntries({ content_type: 'navbar' })
+      .catch(e => error(e.message));
+
+    this.navbar = this.navbar.items[0].fields;
+
     if (process.browser) {
       const smoothscroll = require('smoothscroll-for-websites');
 

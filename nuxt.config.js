@@ -9,7 +9,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'Bassan',
+    title: 'Bassan | Rédaction',
     meta: [
       { charset: 'utf-8' },
       { lang: 'fr' },
@@ -17,8 +17,7 @@ module.exports = {
       {
         hid: 'description',
         name: 'description',
-        content:
-          'Bassan rédaction créative est une entreprise à Sherbrooke pour les différents type de rédaction. Inclus les réseaux sociaux, matériel corporatif, le web et plus encore.'
+        content: `Bassan | R&eacute;daction cr&eacute;ative d&eacute;niche les mots justes et les agence judicieusement pour donner vie &agrave; toutes vos id&eacute;es sous une forme encore plus/extraordinaire que vous ne l'auriez vous-m&ecirc;me imagin&eacute;!`
       },
       {
         hid: 'keywords',
@@ -29,6 +28,26 @@ module.exports = {
       {
         property: 'og:url',
         content: 'https://bassan.netlify.com'
+      },
+      {
+        property: 'og:img',
+        content: '/og-image.jpg'
+      },
+      {
+        property: 'og:image:height',
+        content: '1257'
+      },
+      {
+        property: 'og:image:width',
+        content: '2400'
+      },
+      {
+        property: 'og:title',
+        content: 'Bassan | R&eacute;daction'
+      },
+      {
+        property: 'og:description',
+        content: `Bassan | R&eacute;daction cr&eacute;ative d&eacute;niche les mots justes et les agence judicieusement pour donner vie &agrave; toutes vos id&eacute;es sous une forme encore plus/extraordinaire que vous ne l'auriez vous-m&ecirc;me imagin&eacute;!`
       },
       {
         name: 'apple-mobile-web-app-capable',

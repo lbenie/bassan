@@ -1,8 +1,6 @@
 <template lang="pug">
   div
-    navbar(
-      :data="navbar"
-    )
+    //- social
     logo
     about(
       :data="about"
@@ -34,25 +32,25 @@ import Service from '~/components/Service.vue';
 import Testimonial from '~/components/Testimonial.vue';
 import Contact from '~/components/Contact.vue';
 import Copyright from '~/components/Copyright.vue';
+import Social from '~/components/Social.vue';
 import { client } from '~/plugins/contentful.js';
 
 export default {
   components: {
-    Navbar,
     Logo,
     About,
     Work,
     Service,
     Testimonial,
     Contact,
-    Copyright
+    Copyright,
+    Social
   },
   async asyncData({ error }) {
     let result = {};
 
-    const data = await Promise.all(
+    const entries = await Promise.all(
       [
-        'navbar',
         'about',
         'work',
         'client',
@@ -64,23 +62,15 @@ export default {
       ].map(x => client.getEntries({ content_type: x }))
     ).catch(e => error(e.message));
 
-    data.forEach((element, index) => {
-      if (data[index].items[0].sys.contentType.sys.id === 'client') {
-        result[data[index].items[0].sys.contentType.sys.id] = data[
-          index
-        ].items.slice(0, 7);
-      } else if (
-        data[index].items[0].sys.contentType.sys.id === 'testimonial' ||
-        data[index].items[0].sys.contentType.sys.id === 'services'
-      ) {
-        result[data[index].items[0].sys.contentType.sys.id] = data[
-          index
-        ].items.map(({ fields }) => fields);
-      } else {
-        result[data[index].items[0].sys.contentType.sys.id] =
-          data[index].items[0].fields;
-      }
+    entries.forEach(entry => {
+      result[entry.items[0].sys.contentType.sys.id] = entry.items.map(
+        ({ fields, sys }) => {
+          return { ...fields, id: sys.id };
+        }
+      );
     });
+
+    result.client = result.client.filter(x => x.featured);
 
     return result;
   },
@@ -88,7 +78,7 @@ export default {
     if (process.browser) {
       const wowjs = require('wowjs');
 
-      const wow = new wowjs.WOW();
+      const wow = new wowjs.WOW({ mobile: false });
       wow.init();
     }
   }

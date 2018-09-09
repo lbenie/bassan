@@ -1,42 +1,51 @@
 <template lang="pug">
-  div
-    navbar(:data="navbar")
-    project-list.has-8x-padding-top(:work="work", :clients="client")
+  section.section.has-section-margin
+    .container
+      .columns
+        .column.is-3
+          nuxt-link.card-footer-item.button.is-bassan.is-selected.is-rounded(
+            :to="`/`"
+          )
+            no-ssr
+              font-awesome-icon(
+                :icon="['fas', 'angle-double-left']"
+              )
+            | &nbsp;&nbsp;Accueil
+      project-list.has-8x-padding-top(:work="work", :clients="client")
 </template>
 <script>
 import { client } from '~/plugins/contentful.js';
-import Navbar from '~/components/Navbar.vue';
 import ProjectList from '~/components/ProjectList.vue';
 
 export default {
   components: {
-    Navbar,
     ProjectList
   },
   async asyncData({ error }) {
     let result = {};
 
-    const data = await Promise.all(
-      ['navbar', 'client', 'work'].map(x =>
-        client.getEntries({ content_type: x })
-      )
+    const entries = await Promise.all(
+      ['client', 'work'].map(x => client.getEntries({ content_type: x }))
     ).catch(e => error(e.message));
 
-    data.forEach((element, index) => {
-      if (data[index].items[0].sys.contentType.sys.id === 'client') {
-        result[data[index].items[0].sys.contentType.sys.id] = data[index].items;
-      } else {
-        result[data[index].items[0].sys.contentType.sys.id] =
-          data[index].items[0].fields;
-      }
+    entries.forEach(entry => {
+      result[entry.items[0].sys.contentType.sys.id] = entry.items.map(
+        ({ fields, sys }) => {
+          return { ...fields, id: sys.id };
+        }
+      );
     });
 
     return result;
   },
   head() {
     return {
-      title: this.work.title
+      title: 'Portfolio'
     };
   }
 };
 </script>
+<style lang="stylus" scoped>
+.has-8x-padding-top
+  padding-top 0
+</style>

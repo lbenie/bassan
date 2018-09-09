@@ -21,7 +21,7 @@ import ProjectList from '~/components/ProjectList.vue';
 export default {
   props: {
     work: {
-      type: [Object],
+      type: [Array],
       required: true
     },
     clients: {
