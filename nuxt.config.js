@@ -13,6 +13,7 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { lang: 'fr' },
+      { nativeUi: true },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
@@ -100,7 +101,7 @@ module.exports = {
     { src: '~/plugins/tinySlider', ssr: false },
     { src: '~/plugins/backToTop', ssr: false }
   ],
-  modules: ['@nuxtjs/dotenv', '@nuxtjs/markdownit'],
+  modules: ['@nuxtjs/dotenv', '@nuxtjs/markdownit', '@nuxtjs/pwa'],
   markdownit: {
     injected: true,
     html: true
@@ -110,5 +111,25 @@ module.exports = {
     CTF_SPACE_ID: process.env.CTF_SPACE_ID,
     EMAIL_ANDREE_ANNE: process.env.EMAIL_ANDREE_ANNE,
     EMAIL_LUCIEN: process.env.EMAIL_LUCIEN
+  },
+  manifest: {
+    name: 'Bassan | Rédaction',
+    short_name: 'Bassan | Rédaction',
+    icons: [
+      {
+        src: '/icons/android-chrome-192x192.png',
+        sizes: '192x192',
+        type: 'image/png'
+      },
+      {
+        src: '/icons/android-chrome-512x512.png',
+        sizes: '512x512',
+        type: 'image/png'
+      }
+    ],
+    start_url: '/index.html',
+    display: 'standalone',
+    background_color: '#000000',
+    theme_color: '#4DBA87'
   }
 };
