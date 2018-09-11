@@ -139,8 +139,7 @@ module.exports = {
     theme_color: '#f0c180'
   },
   'google-analytics': {
-    id:
-      process.env.NODE_ENV === 'production' ? process.env.GOOGLE_ANALYTICS : ''
+    id: process.env.GOOGLE_ANALYTICS
   },
   sitemap: {
     generate: true,
