@@ -101,7 +101,13 @@ module.exports = {
     { src: '~/plugins/tinySlider', ssr: false },
     { src: '~/plugins/backToTop', ssr: false }
   ],
-  modules: ['@nuxtjs/dotenv', '@nuxtjs/markdownit', '@nuxtjs/pwa'],
+  modules: [
+    '@nuxtjs/dotenv',
+    '@nuxtjs/markdownit',
+    '@nuxtjs/pwa',
+    '@nuxtjs/google-analytics',
+    '@nuxtjs/sitemap'
+  ],
   markdownit: {
     injected: true,
     html: true
@@ -131,5 +137,15 @@ module.exports = {
     display: 'standalone',
     background_color: '#000000',
     theme_color: '#f0c180'
+  },
+  'google-analytics': {
+    id:
+      process.env.NODE_ENV === 'production' ? process.env.GOOGLE_ANALYTICS : ''
+  },
+  sitemap: {
+    generate: true,
+    hostname: 'https://bassan.netlify.com/',
+    cacheTime: 1000 * 60 * 15,
+    gzip: true
   }
 };
