@@ -28,7 +28,7 @@ module.exports = {
       },
       {
         property: 'og:url',
-        content: 'https://bassan.netlify.com'
+        content: 'https://bassan.ca'
       },
       {
         property: 'og:img',
@@ -121,6 +121,7 @@ module.exports = {
   manifest: {
     name: 'Bassan | Rédaction',
     short_name: 'Bassan',
+    hostname: 'https://bassan.ca',
     icons: [
       {
         src: '/icons/android-chrome-192x192.png',
