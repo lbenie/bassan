@@ -144,7 +144,7 @@ module.exports = {
   },
   sitemap: {
     generate: true,
-    hostname: 'https://bassan.netlify.com/',
+    hostname: 'https://bassan.ca/',
     cacheTime: 1000 * 60 * 15,
     gzip: true
   }
