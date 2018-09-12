@@ -19,7 +19,7 @@
               font-awesome-icon(
                 :icon="['fas', 'angle-left']"
               )
-            | &nbsp;&nbsp;Liste de projets
+            | &nbsp;&nbsp;Projets
       .columns
         .column.is-half.is-offset-one-quarter.has-text-centered
           h1#about.wow.fadeIn.is-uppercase.has-border-top.has-border-bottom(
