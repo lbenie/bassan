@@ -18,7 +18,7 @@ module.exports = {
       {
         hid: 'description',
         name: 'description',
-        content: `Bassan | R&eacute;daction cr&eacute;ative d&eacute;niche les mots justes et les agence judicieusement pour donner vie &agrave; toutes vos id&eacute;es sous une forme encore plus/extraordinaire que vous ne l'auriez vous-m&ecirc;me imagin&eacute;!`
+        content: `Bassan | Rédaction créative déniche les mots justes et les agence judicieusement pour donner vie &agrave; toutes vos idées sous une forme encore plus/extraordinaire que vous ne l'auriez vous-m&ecirc;me imaginé!`
       },
       {
         hid: 'keywords',
@@ -44,11 +44,11 @@ module.exports = {
       },
       {
         property: 'og:title',
-        content: 'Bassan | R&eacute;daction'
+        content: 'Bassan | Rédaction'
       },
       {
         property: 'og:description',
-        content: `Bassan | R&eacute;daction cr&eacute;ative d&eacute;niche les mots justes et les agence judicieusement pour donner vie &agrave; toutes vos id&eacute;es sous une forme encore plus/extraordinaire que vous ne l'auriez vous-m&ecirc;me imagin&eacute;!`
+        content: `Bassan | Rédaction créative déniche les mots justes et les agence judicieusement pour donner vie &agrave; toutes vos idées sous une forme encore plus/extraordinaire que vous ne l'auriez vous-m&ecirc;me imaginé!`
       },
       {
         name: 'apple-mobile-web-app-capable',
