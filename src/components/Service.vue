@@ -7,8 +7,7 @@
             data-wow-delay="250ms"
           )
             | {{ data[0].title }}
-        .column.is-full
-          | {{ data[0].content }}
+        .column.is-full(v-html="$md.render(data[0].content)")
       .columns.is-multiline
         .wow(
           v-for="(service, index) in services"
