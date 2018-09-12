@@ -1,7 +1,7 @@
 <template lang="pug">
   section.section.has-4x-padding-top
     .container
-      .columns.is-centered.has-text-centered.is-1
+      .columns.is-centered.is-mobile.has-text-centered
         .column.is-1
           a.facebook(
             href="https://www.facebook.com/bassanredactioncreative/"

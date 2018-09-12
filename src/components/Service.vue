@@ -25,7 +25,7 @@
               v-if="index % 2 === 0"
             )
               .column.is-3.is-offset-1.is-column-v-centered.is-column-h-centered
-                no-ssr
+                no-ssr.is-hidden-touch
                   font-awesome-icon(
                     :icon="service.icon.split(' ')"
                     size="4x"
@@ -36,7 +36,7 @@
             )
               .column.is-6.is-offset-1(v-html="$md.render(service.description)")
               .column.is-3.is-offset-1.is-column-v-centered.is-column-h-centered
-                no-ssr
+                no-ssr.is-hidden-touch
                   font-awesome-icon(
                     :icon="service.icon.split(' ')"
                     size="4x"
