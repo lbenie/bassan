@@ -2,7 +2,7 @@
   section.section.has-4x-padding-top
     .container
       .columns.is-centered.is-mobile.has-text-centered
-        .column.is-1
+        .column.is-2
           a.facebook(
             href="https://www.facebook.com/bassanredactioncreative/"
           )
@@ -11,7 +11,7 @@
                 :icon="['fab', 'facebook']"
                 size="2x"
               )
-        .column.is-1
+        .column.is-2
           a.google(
             href="https://plus.google.com/u/0/101459700306530713010"
           )
@@ -20,7 +20,7 @@
                 :icon="['fab', 'google-plus-g']"
                 size="2x"
               )
-        .column.is-1
+        .column.is-2
           a.linkedin(
             href="https://www.linkedin.com/in/andr%C3%A9e-anne-blais-auclair-b-a-92368b47/"
           )
@@ -29,7 +29,7 @@
                 :icon="['fab', 'linkedin']"
                 size="2x"
               )
-        .column.is-1
+        .column.is-2
           a.instagram(
             href="https://www.instagram.com/andreeblaisa/"
           )
