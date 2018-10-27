@@ -33,7 +33,12 @@ import { client } from '~/plugins/contentful.js';
 
 export default {
   async asyncData({ error, params }) {
-    return client.getEntry(params.id);
+    const data = await client.getEntries({
+      content_type: 'client',
+      'fields.slug': params.slug
+    });
+
+    return data.items[0];
   },
   head() {
     return {

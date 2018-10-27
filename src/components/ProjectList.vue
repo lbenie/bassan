@@ -52,7 +52,7 @@
                   )
                   footer.card-footer
                     nuxt-link.card-footer-item.button.is-bassan.is-selected.is-rounded(
-                      :to="`/portfolio/${client.id}`"
+                      :to="`/portfolio/${client.slug}`"
                     )
                       | En savoir plus...
 </template>
