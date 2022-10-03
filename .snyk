@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.14.1
+version: v1.25.0
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
@@ -756,3 +756,15 @@ patch:
         patched: '2020-06-09T08:01:41.488Z'
     - nuxt > @nuxt/builder > @nuxt/webpack > @nuxt/babel-preset-app > @babel/preset-env > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash:
         patched: '2020-06-09T08:01:41.488Z'
+    - nuxt > @nuxt/babel-preset-app > @babel/preset-env > @babel/preset-modules > @babel/types > lodash:
+        patched: '2022-10-03T16:25:58.478Z'
+    - nuxt > @nuxt/babel-preset-app > @vue/babel-preset-jsx > @vue/babel-plugin-transform-vue-jsx > @babel/helper-module-imports > @babel/types > lodash:
+        patched: '2022-10-03T16:25:58.478Z'
+    - nuxt > @nuxt/webpack > @nuxt/babel-preset-app > @vue/babel-preset-jsx > @vue/babel-plugin-transform-vue-jsx > @babel/helper-module-imports > @babel/types > lodash:
+        patched: '2022-10-03T16:25:58.478Z'
+    - nuxt > @nuxt/builder > @nuxt/webpack > @nuxt/babel-preset-app > @vue/babel-preset-jsx > @vue/babel-plugin-transform-vue-jsx > @babel/helper-module-imports > @babel/types > lodash:
+        patched: '2022-10-03T16:25:58.478Z'
+    - nuxt > @nuxt/builder > @nuxt/webpack > @nuxt/babel-preset-app > @vue/babel-preset-jsx > @vue/babel-sugar-v-on > @vue/babel-plugin-transform-vue-jsx > @babel/helper-module-imports > @babel/types > lodash:
+        patched: '2022-10-03T16:25:58.478Z'
+    - nuxt > @nuxt/builder > @nuxt/webpack > @nuxt/babel-preset-app > @babel/preset-env > @babel/preset-modules > @babel/plugin-transform-dotall-regex > @babel/helper-create-regexp-features-plugin > @babel/helper-annotate-as-pure > @babel/types > lodash:
+        patched: '2022-10-03T16:25:58.478Z'
