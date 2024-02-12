@@ -30,7 +30,7 @@
     "bulma-pricingtable": "^0.2.0",
     "contentful": "^6.1.1",
     "moment": "^2.22.2",
-    "nuxt": "^2.15.0",
+    "nuxt": "^3.0.0",
     "qselector": "^2.2.0",
     "register-service-worker": "^1.0.0",
     "smoothscroll-for-websites": "^1.4.6",
